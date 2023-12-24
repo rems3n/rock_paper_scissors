@@ -27,3 +27,22 @@ function playRound(computerChoice, playerChoice) {
         }
     }
 }
+
+function game() {
+    let playerChoice = prompt("First Choice:").toLowerCase();
+
+    while (playerWins < 3 && computerWins < 3){
+        let computerChoice = getComputerChoice();
+        let result = playRound(computerChoice,playerChoice);
+        console.log(result);
+        console.log("pvar = "+playerWins+" | cvar = "+computerWins)
+        if (playerWins == 3 || computerWins == 3) {break;}
+        playerChoice = prompt("Choose again").toLowerCase();
+    }
+    if (computerWins>playerWins){
+        return "Computer wins! "+computerWins+" wins to "+playerWins;
+    } else {
+        return "Player wins! "+playerWins+" wins to "+computerWins;
+    }
+
+}
