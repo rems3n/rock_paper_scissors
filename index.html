@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Users/christophergusty/code/repos/rock_paper_scissors/script.js"></script>
+</head>
+<body>
+    <script>
+        let playerWins = 0;
+        let computerWins = 0;
+        let ties = 0;
+        let playerSelection = prompt("First Choice:").toLowerCase();
+
+        while(playerSelection !== "done"){
+            let computerChoice = getComputerChoice();
+            let result = playRound(computerChoice);
+            console.log(result);
+            playerSelection = prompt("Choose or say done").toLowerCase();
+        }
+    </script>
+</body>
+</html>
